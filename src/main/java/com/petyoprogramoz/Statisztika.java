@@ -6,10 +6,10 @@ import java.util.List;
 
 public class Statisztika {
 
-    private List<Konyv> konyvek = new ArrayList();
+    public List<Konyv> konyvek = new ArrayList();
 
 
-    private Boolean readInBooks() throws SQLException {
+    public Boolean readInBooks(){
         try{
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/konyvek", "root" , ""
@@ -25,11 +25,13 @@ public class Statisztika {
                         rs.getInt("publish_year"),
                         rs.getInt("page_count")
                 );
+                konyvek.add(konyv);
             }
         }catch(SQLException e){
             System.out.println("Error in reading process");
             return false;
         }
+        System.out.println("yo mr white");
         return true;
     }
 
