@@ -10,5 +10,6 @@ public class Main {
         stat.regikonyv();
         stat.leghosszabbkonyvadatai();
         stat.legtobbkonyvelrendelkezo();
+        stat.konyvcimbolszerzo();
     }
 }

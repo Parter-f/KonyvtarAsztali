@@ -84,4 +84,24 @@ public class Statisztika {
 
     }
 
+    public void konyvcimbolszerzo(){
+        System.out.println("Adjon meg egy könyv címet : ");
+        Scanner scanner = new Scanner(System.in);
+        String konyvcim = scanner.nextLine();
+        Boolean vane = false;
+        String iro = "";
+        for (int i = 0; i < konyvek.size(); i++) {
+            if (konyvcim.equals(konyvek.get(i).getTitle())){
+                vane = true;
+                iro = konyvek.get(i).getAuthor();
+            }
+        }
+        if (vane == true){
+            System.out.println("A megadott könyv szerzője : " + iro);
+        }
+        else{
+            System.out.println("Nincs ilyen könyv");
+        }
+    }
+
 }
